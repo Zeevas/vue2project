@@ -1,7 +1,19 @@
 <template>
-    <div>
-        character block
-        {{}}
+    <div class="character-block">
+        <div class="character-block-image">
+            <img :src="character.image" :alt="character.name">
+        </div>
+        <div class="character-block-info">
+            <span>
+                {{character.name}}
+            </span>    
+            <span>
+                {{character.status}} - {{character.species}}
+            </span>   
+            <span>
+                Last known location: {{character.location.name}}
+            </span>
+        </div>
     </div>
 </template>
 
@@ -9,11 +21,13 @@
 
 export default {
     name: 'character-block',
-    data() {
-        return {
-            
+    props: {
+        character: {
+            type: Object,
+            required: true,
         }
     },
+    
     
     
 };

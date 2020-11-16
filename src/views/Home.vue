@@ -1,7 +1,14 @@
 <template>
   <div class="home">
-    zalas
-        <character-block v-for="character in characters" :key="character.id" />
+    <div class="characters-list">
+       <character-block 
+          v-for="character in characters" 
+          :key="character.id"
+          :character="character" 
+        />
+    </div>
+   
+       
   </div>
 </template>
 
