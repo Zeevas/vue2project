@@ -8,11 +8,11 @@
 .character-block {
     display: flex;
     justify-content: row;
-    width: 22%;
+    width: 20%;
     margin: 10px;
 
-    &__image {
-        width: 200px;
+    &__image img{
+        width: 150px;
         height: auto;
 
     }

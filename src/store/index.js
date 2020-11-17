@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axiosInstance from '@/api/index';
-import { CHARACTERS_BY_PAGE } from '@/api/routes';
+import { CHARACTERS_BY_PAGE, CHARACTERS_BY_ID} from '@/api/routes';
 
 Vue.use(Vuex)
 
@@ -21,7 +21,11 @@ export default new Vuex.Store ({
         }
     },
     actions: {
-        fetchCharacters({commit},page) {
+        fetchCharacters({state,commit},page) {
+          const pageCharacters = state.characters[page];
+          if (pageCharacters) {
+            return Promise.resolve(pageCharacters);
+          }
             return axiosInstance.get( CHARACTERS_BY_PAGE(page))
             .then(({data}) => {
                 const {info,results} = data;
@@ -31,6 +35,10 @@ export default new Vuex.Store ({
             })
             .catch(err => console.log(err));
 
+        },
+        fetchSingleCharacter(_,id) {
+          return axiosInstance.get(CHARACTERS_BY_ID(id))
+          
         }
 
     },

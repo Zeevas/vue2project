@@ -4,7 +4,7 @@
             <img :src="character.image" :alt="character.name">
         </div>
         <div class="character-block-info">
-            <span>
+            <span @click="detailedInfo">
                 {{character.name}}
             </span>    
             <span>
@@ -25,6 +25,12 @@ export default {
         character: {
             type: Object,
             required: true,
+        }
+    },
+    methods: {
+        detailedInfo() {
+            this.$router.push({name: 'CharacterDetails', params: { id: this.character.id}});
+
         }
     },
     
