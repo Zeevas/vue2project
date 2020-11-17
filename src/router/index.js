@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Character from '../views/Character.vue'
+// import Home from '../views/Home.vue'
+// import Character from '../views/Character.vue'
+
+const Home = () => import('../views/Home.vue')
+const Character = () => import('../views/Character.vue')
 
 Vue.use(VueRouter)
 
