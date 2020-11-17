@@ -1,7 +1,9 @@
 <template>
   <div class="home">
+  <label class="label"> The Rick and Morty characters</label>
+  
     <div class="characters-list">
-      Rick and Morty
+      
        <character-block 
           v-for="character in characters" 
           :key="character.id"
@@ -14,7 +16,7 @@
       :page-range="3"
       :margin-pages="2"
       :click-handler="clickCallback"
-      :prev-text="'Prev'"
+      :prev-text="'Previous'"
       :next-text="'Next'"
       :container-class="'pagination'"
       :page-class="'page-item'">
@@ -27,7 +29,9 @@
 <script>
 
 import CharacterBlock from '@/components/CharacterBlock.vue';
-import Paginate from 'vuejs-paginate'
+import Paginate from 'vuejs-paginate';
+
+
 
 export default {
   name: 'home',
@@ -50,6 +54,7 @@ export default {
     },
     firstCharacter() {
       return this.$store.getters['getCharacterById']({id:1,page:1});
+      
     },
     pages() {
       return this.$store.state.pages;
@@ -59,6 +64,7 @@ export default {
     currentPage: {
       handler(page) {
         this.$store.dispatch('fetchCharacters',page);
+        
       },
       immediate:true
     },
@@ -68,6 +74,7 @@ export default {
   methods: {
     clickCallback(pageNum) {
       console.log({pageNum});
+      
     },
   },
 }

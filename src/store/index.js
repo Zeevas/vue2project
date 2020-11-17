@@ -21,6 +21,7 @@ export default new Vuex.Store ({
         }
     },
     actions: {
+      
         fetchCharacters({state,commit},page) {
           const pageCharacters = state.characters[page];
           if (pageCharacters) {
@@ -37,7 +38,9 @@ export default new Vuex.Store ({
 
         },
         fetchSingleCharacter(_,id) {
+          
           return axiosInstance.get(CHARACTERS_BY_ID(id))
+          
           
         }
 

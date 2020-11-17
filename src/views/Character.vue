@@ -24,6 +24,7 @@ export default {
     if(id) {
      const {data} = await this.$store.dispatch('fetchSingleCharacter',id)
      this.character = data;
+     
 
     }
     } catch (err) {

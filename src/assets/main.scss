@@ -1,6 +1,5 @@
-.character-list {
+.characters-list {
     display: flex;
-    float: left;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -9,17 +8,59 @@
 .character-block {
     display: flex;
     justify-content: row;
-    width: 20%;
+    width: 22%;
     margin: 10px;
 
     &__image img{
         width: 150px;
         height: auto;
+        border: 3px solid #00a8e1;
+        cursor: pointer;
 
     }
     &__info {
         display: flex;
         flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+        cursor: pointer;
         
     }
+}
+.label {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    font-family: "Monotype Corsiva" Cursive;
+    text-shadow: 3px 2px rgb(106, 212, 6);
+    background-color:  #61f8539c;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+.characterName {
+    text-shadow: 1px 1px rgb(6, 44, 212);
+    
+
+}
+.pagination {
+    list-style-type:none;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(9, 145, 16, 0.445);
+
+       
+}
+.page-item {
+    color: rgb(77, 145, 9);
+    padding: 5px;
+   
+}
+.alive {
+    color: rgb(77, 145, 9);
+}
+.dead {
+    color: red;
+}
+.unknown {
+    color: grey;
 }
