@@ -26,16 +26,24 @@
         
     }
 }
-.label {
+.home{
     display: flex;
-    height: 100px;
-    width: 100%;
     justify-content: center;
+    flex-direction: column;
+}
+.label {
+    width: 100%;
+    height: 15rem;
+    padding: 60px;
+    text-align: center;
     font-family: "Monotype Corsiva" Cursive;
     text-shadow: 3px 2px rgb(106, 212, 6);
-    background-color:  #61f8539c;
+    background: url('bg1.jpg');
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
 }
 .characterName {
     text-shadow: 1px 1px rgb(6, 44, 212);
